@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/resultMain.css')}}">
+    <title>Prediction results</title>
+</head>
+<body>
+    <section>
+    <h1>Loan Application Result</h1>
+        {% if message %}
+          <p>{{ message }}</p>
+        {% endif %}
+        {% if pred_class == 'Not Defaulted' %}
+          <p>Your predicted ROI is: {{ pred_roi }}</p>
+          <p>Your predicted EMI is: {{ pred_emi }}</p>
+          <p>Your predicted ELA is: {{ pred_ela }}</p>
+        {% endif %}
+    </section>
+</body>
+</html>
