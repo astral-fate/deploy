@@ -6,9 +6,9 @@ import numpy as np
 
 app = Flask(__name__)
 
-reg_model = joblib.load("Regression_model.pkl")
+reg_model = joblib.load("linear_regression_pipeline.pkl")
 
-clf_model = joblib.load("Classification_model.pkl")
+clf_model = joblib.load("clasification_model")
 
 @app.route('/')
 
