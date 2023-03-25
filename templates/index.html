@@ -25,12 +25,12 @@
       .btn-primary { background-color: #4a77d4; background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
       .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
       .btn-block { width: 100%; display:block; }
-      
+
       * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
-      
+
       html { width: 100%; height:100%; overflow:hidden; }
-      
-      body { 
+
+      body {
         width: 100%;
         height:100%;
         font-family: 'Open Sans', sans-serif;
@@ -45,9 +45,9 @@
         background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
         background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
-      
+
       }
-      .login { 
+      .login {
         position: absolute;
         top: 40%;
         left: 50%;
@@ -55,12 +55,12 @@
         width:400px;
         height:400px;
       }
-      
+
       .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
-      
-      input { 
-        width: 100%; 
-        margin-bottom: 10px; 
+
+      input {
+        width: 100%;
+        margin-bottom: 10px;
         background: rgba(0,0,0,0.3);
         border: none;
         outline: none;
@@ -78,8 +78,8 @@
         transition: box-shadow .5s ease;
       }
       input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
-      
-    </style>   
+
+    </style>
 
 
 
@@ -96,14 +96,14 @@
         <option value="0">Female</option>
         <option value="1">Male</option>
       </select><br><br>
-      
+
       <label for="Status">Status:</label>
       <select name="Status">
-        <option value="0">Error</option>
-        <option value="1">Error</option>
-        <option value="2">Error</option>
+        <option value="0">Repaid</option>
+        <option value="1">Late</option>
+        <option value="2">Current</option>
       </select><br><br>
-      
+
       <label for="Education">Education Level:</label>
       <select name="Education">
         <option value="1">Primary Education</option>
@@ -112,14 +112,14 @@
         <option value="4">Secondary Education</option>
         <option value="5">Higher education</option>
       </select><br><br>
-      
+
       <label for="EmploymentStatus">Employment Status:</label>
       <select name="EmploymentStatus">
         <option value="0">Unemployed</option>
         <option value="1">Employed</option>
         <option value="2">Self-employed</option>
       </select><br><br>
-      
+
       <label for="MaritalStatus">Marital Status:</label>
       <select name="MaritalStatus">
         <option value="1">Married</option>
@@ -128,7 +128,7 @@
         <option value="4">Divorced</option>
         <option value="5">Widow</option>
       </select><br><br>
-      
+
       <label for="HomeOwnershipType">Home Ownership Type:</label>
       <select name="HomeOwnershipType">
         <option value="0">Homeless</option>
@@ -142,38 +142,39 @@
         <option value="8">Mortgage</option>
         <option value="9">Owner With Encumbrance</option>
       </select><br><br>
-      
+
       <label for="UseOfLoan">Use of Loan:</label>
       <select name="UseOfLoan">
         <option value="0"> Loan consolidation</option>
-        <option value="1">Real Estate</option>
-        <option value="2">Home Improvement</option>
-        <option value="3">Business</option>
+        <option value="1">Personal</option>
+        <option value="2">Business</option>
+        <option value="3">Other</option>
+
       </select><br><br>
 
       <label for="Amount">Loan Amount:</label>
       <input type="number" name="Amount" step="0.001" required><br><br>
-      
+
       <label for="Interest">Interest Rate:</label>
       <input type="number" name="Interest" step="0.001" required><br><br>
-      
+
       <label for="LoanDuration">Loan Duration (in months):</label>
       <input type="number" name="LoanDuration" step="0.001" required><br><br>
-      
+
       <label for="IncomeTotal">Total Income:</label>
       <input type="number" name="IncomeTotal" step="0.001" required><br><br>
-      
+
       <label for="LiabilitiesTotal">Total Liabilities:</label>
       <input type="number" name="LiabilitiesTotal" step="0.001" required><br><br>
-      
+
       <label for="DebtToIncome">Debt to Income Ratio:</label>
       <input type="number" name="DebtToIncome" step="0.001" required><br><br>
-      
+
       <label for="FreeCash">Free Cash:</label>
       <input type="number" name="FreeCash" step="0.001" required><br><br>
-      
 
-      
+
+
       <input type="submit" value="Submit">
 
     </div>
