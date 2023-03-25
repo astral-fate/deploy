@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 reg_model = joblib.load("Regression_model.pkl")
 
-clf_model = joblib.load("classification_model.pkl")
+clf_model = joblib.load("Classification_model.pkl")
 
 @app.route('/')
 
@@ -16,21 +16,29 @@ def home():
 
     return render_template('index.html')
 
-@app.route('/results', methods=['POST'])
+@app.route('/result', methods=['POST'])
 
-def results():
+def result():
 
     if request.method == 'POST':
 
         features = [float(x) for x in request.form.values()]
 
-        features = np.array(features).reshape(1, -1)
+        # features = np.array(features).reshape(1, -1)
+        features = [np.array(features)]
 
-        reg_pred = reg_model.predict(features)
+        print(features)
 
         clf_pred = clf_model.predict(features)
 
-        return render_template('index.html', reg_pred=reg_pred[0], clf_pred=clf_pred[0])
+        print('The Classification Prediction is: ',clf_pred)
+
+        reg_pred = reg_model.predict(features)
+
+        print('The Regression Prediction is: ',reg_pred)
+
+
+        return render_template('result.html',clf_pred=clf_pred[0], reg_prediction =reg_pred, reg_pred_emi=round(reg_pred[0][0],2),reg_pred_ela=round(reg_pred[0][1],2),reg_pred_roi=round(reg_pred[0][2],2))
 
 if __name__ == '__main__':
 
