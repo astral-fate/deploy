@@ -87,7 +87,7 @@
   </head>
  <body class="scrollable">
     <h1>Loan Prediction</h1>
-    <form action="{{ url_for('predict') }}" method="POST">
+    <form action="{{ url_for('result') }}" method="POST">
 
 
       <div class="features">
@@ -99,15 +99,18 @@
       
       <label for="Status">Status:</label>
       <select name="Status">
-        <option value="0">Single</option>
-        <option value="1">Married</option>
+        <option value="0">Error</option>
+        <option value="1">Error</option>
+        <option value="2">Error</option>
       </select><br><br>
       
       <label for="Education">Education Level:</label>
       <select name="Education">
-        <option value="0">High School</option>
-        <option value="1">College</option>
-        <option value="2">Graduate</option>
+        <option value="1">Primary Education</option>
+        <option value="2">Basic Education</option>
+        <option value="3">Vocational Education</option>
+        <option value="4">Secondary Education</option>
+        <option value="5">Higher education</option>
       </select><br><br>
       
       <label for="EmploymentStatus">Employment Status:</label>
@@ -119,44 +122,55 @@
       
       <label for="MaritalStatus">Marital Status:</label>
       <select name="MaritalStatus">
-        <option value="0">Single</option>
         <option value="1">Married</option>
-        <option value="2">Divorced</option>
+        <option value="2">Cohabitant</option>
+        <option value="3">Single</option>
+        <option value="4">Divorced</option>
+        <option value="5">Widow</option>
       </select><br><br>
       
       <label for="HomeOwnershipType">Home Ownership Type:</label>
       <select name="HomeOwnershipType">
-        <option value="0">Rent</option>
-        <option value="1">Own</option>
-        <option value="2">Mortgage</option>
+        <option value="0">Homeless</option>
+        <option value="1">Owner</option>
+        <option value="2">Living With Parents</option>
+        <option value="3">Tenant, Pre-furnished Property</option>
+        <option value="4">Tenant, Unfurnished Property</option>
+        <option value="5">Council House</option>
+        <option value="6">Joint Tenant</option>
+        <option value="7">Joint Ownership</option>
+        <option value="8">Mortgage</option>
+        <option value="9">Owner With Encumbrance</option>
       </select><br><br>
       
       <label for="UseOfLoan">Use of Loan:</label>
       <select name="UseOfLoan">
-        <option value="0">Personal</option>
-        <option value="1">Business</option>
+        <option value="0"> Loan consolidation</option>
+        <option value="1">Real Estate</option>
+        <option value="2">Home Improvement</option>
+        <option value="3">Business</option>
       </select><br><br>
 
       <label for="Amount">Loan Amount:</label>
-      <input type="number" name="Amount" required><br><br>
+      <input type="number" name="Amount" step="0.001" required><br><br>
       
       <label for="Interest">Interest Rate:</label>
-      <input type="number" name="Interest" step="0.01" required><br><br>
+      <input type="number" name="Interest" step="0.001" required><br><br>
       
       <label for="LoanDuration">Loan Duration (in months):</label>
-      <input type="number" name="LoanDuration" required><br><br>
+      <input type="number" name="LoanDuration" step="0.001" required><br><br>
       
       <label for="IncomeTotal">Total Income:</label>
-      <input type="number" name="IncomeTotal" required><br><br>
+      <input type="number" name="IncomeTotal" step="0.001" required><br><br>
       
       <label for="LiabilitiesTotal">Total Liabilities:</label>
-      <input type="number" name="LiabilitiesTotal" required><br><br>
+      <input type="number" name="LiabilitiesTotal" step="0.001" required><br><br>
       
       <label for="DebtToIncome">Debt to Income Ratio:</label>
-      <input type="number" name="DebtToIncome" step="0.01" required><br><br>
+      <input type="number" name="DebtToIncome" step="0.001" required><br><br>
       
       <label for="FreeCash">Free Cash:</label>
-      <input type="number" name="FreeCash" required><br><br>
+      <input type="number" name="FreeCash" step="0.001" required><br><br>
       
 
       
