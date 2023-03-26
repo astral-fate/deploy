@@ -79,32 +79,114 @@
       }
       input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
+
+        .features label {
+      display: inline-block;
+
+      text-align: right;
+      margin-right: 10px;
+    }
+
+    .features input[type="number"], .features input[type="text"] {
+      box-sizing: border-box;
+      width: 150px;
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+
+    .features input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+
+    }
+
+    .features input[type="submit"]:hover {
+      background-color: #45a049;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+      input[type="submit"]:hover {
+        background-color: #2E8B57;
+      }
+  h1 {
+        text-align: center;
+        margin-top: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+      }
+      .features {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      select, input[type="number"] {
+        width: 330px;
+        height: 30px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
     </style>
 
 
 
 
   </head>
- <body class="scrollable">
+<body class="scrollable">
     <h1>Loan Prediction</h1>
     <form action="{{ url_for('result') }}" method="POST">
+        <div class="features">
+            <label for="Gender" style="display: flex; align-items: center;">Gender:
+                <div style="margin-left: 230px; display: inline-block; cursor: pointer;" onclick="alert('Gender refers to the sex of the borrower (male or female).');">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm.5 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-.6-3.6a.6.6 0 1 1 1.2 0v.6a.6.6 0 1 1-1.2 0v-.6zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                    </svg>
+                </div>
+            </label>
+            <select name="Gender">
+                <option value="1">Female</option>
+                <option value="0">Male</option>
+            </select><br><br>
 
 
-      <div class="features">
-      <label for="Gender">Gender:</label>
-      <select name="Gender">
-        <option value="0">Female</option>
-        <option value="1">Male</option>
-      </select><br><br>
+            <label for="Status" style="display: flex; align-items: center;">Status:
+                <div style="margin-left: 240px; display: inline-block; cursor: pointer;" onclick="alert('Status refers to whether the borrower has repaid their previous loans (repaid) or not (late).');">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm.5 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-.6-3.6a.6.6 0 1 1 1.2 0v.6a.6.6 0 1 1-1.2 0v-.6zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                    </svg>
+                </div>
+            </label>
+            <select name="Status">
+                <option value="1">Repaid</option>
+                <option value="0">Late</option>
+            </select><br><br>
 
-      <label for="Status">Status:</label>
-      <select name="Status">
-        <option value="0">Repaid</option>
-        <option value="1">Late</option>
-        <option value="2">Current</option>
-      </select><br><br>
 
-      <label for="Education">Education Level:</label>
+            <label for="Education" style="display: flex; align-items: center;">Education Level:
+                <div style="margin-left: 145px; display: inline-block; cursor: pointer;" onclick="alert('Education level refers to the highest level of education completed by the borrower. Primary Education: up to grade 5. Basic Education: up to grade 9. Vocational Education: up to grade 12.Secondary Education: up to grade 12. Higher education: above grade 12 (college/university, graduate school, etc.).');">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm.5 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-.6-3.6a.6.6 0 1 1 1.2 0v.6a.6.6 0 1 1-1.2 0v-.6zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
+                </div>
+                </label>
+
       <select name="Education">
         <option value="1">Primary Education</option>
         <option value="2">Basic Education</option>
@@ -112,6 +194,8 @@
         <option value="4">Secondary Education</option>
         <option value="5">Higher education</option>
       </select><br><br>
+
+
 
       <label for="EmploymentStatus">Employment Status:</label>
       <select name="EmploymentStatus">
@@ -145,37 +229,39 @@
 
       <label for="UseOfLoan">Use of Loan:</label>
       <select name="UseOfLoan">
-        <option value="0"> Loan consolidation</option>
-        <option value="1">Personal</option>
-        <option value="2">Business</option>
-        <option value="3">Other</option>
-
+        <option value="0"> Business</option>
+        <option value="1">Education</option>
+        <option value="3">Personal</option>
+        <option value="2">Other</option>
       </select><br><br>
 
-      <label for="Amount">Loan Amount:</label>
-      <input type="number" name="Amount" step="0.001" required><br><br>
+
+      <label for="Amount" >Loan Amount:</label>
+      <input type="number" name="Amount" step="0.001" required style="width: 330px;"><br><br>
 
       <label for="Interest">Interest Rate:</label>
-      <input type="number" name="Interest" step="0.001" required><br><br>
+
+
+      <input type="number" name="Interest" step="0.001"required style="width: 330px;"><br><br>
 
       <label for="LoanDuration">Loan Duration (in months):</label>
-      <input type="number" name="LoanDuration" step="0.001" required><br><br>
+      <input type="number" name="LoanDuration" step="0.001" required style="width: 330px;"><br><br>
 
       <label for="IncomeTotal">Total Income:</label>
-      <input type="number" name="IncomeTotal" step="0.001" required><br><br>
+      <input type="number" name="IncomeTotal" step="0.001" required style="width: 330px;"><br><br>
 
       <label for="LiabilitiesTotal">Total Liabilities:</label>
-      <input type="number" name="LiabilitiesTotal" step="0.001" required><br><br>
+      <input type="number" name="LiabilitiesTotal" step="0.001" required style="width: 330px;"><br><br>
 
       <label for="DebtToIncome">Debt to Income Ratio:</label>
-      <input type="number" name="DebtToIncome" step="0.001" required><br><br>
+      <input type="number" name="DebtToIncome" step="0.001" required style="width: 330px;"><br><br>
 
       <label for="FreeCash">Free Cash:</label>
-      <input type="number" name="FreeCash" step="0.001" required><br><br>
+      <input type="number" name="FreeCash" step="0.001" required style="width: 330px;"><br><br>
 
 
 
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit", style="display: flex; flex-direction: column; align-items: center; width: 330px; height: 40px; margin: 0 auto;">
 
     </div>
 
